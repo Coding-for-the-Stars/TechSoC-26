@@ -11,3 +11,6 @@ i am using list of lists for 2D array
 i have written a builder function that adds boundary of elements 
 and a popper function that removes those boundaries
 i am using two lists to make comparisons simultaneously for each gen then updating
+
+i am sorry for not adding a detailed description because of hacing worked on the logic many days ago i have lost track of how a few things actually worked and i dont have much time now to go through it
+i will surely add one the next time

@@ -1,0 +1,13 @@
+when entering elements of the grid the (0,0) is the topmost left and then it moves to right and then starts from second row
+for example
+0,0  0,1 0,2
+1,0  1,1 1,2
+and so on
+
+python version 3.14
+
+main logic
+i am using list of lists for 2D array
+i have written a builder function that adds boundary of elements 
+and a popper function that removes those boundaries
+i am using two lists to make comparisons simultaneously for each gen then updating

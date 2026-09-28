@@ -1,0 +1,15 @@
+Problem Understanding
+What the problem is asking: The problem is the first-step of creating a turn-based battle simulator. It involves creating the players(benders) with well-defined stats and moves based on a template as defined by the class. The program calls an attack by a Bender 1 damaging Bender 2 and depleting the it's HP, as determined by a set formula involving the relevant stats of both the benders and then makes a check on the state of the damaged bender(fainted/not fainted).
+
+Key concepts involved: Creation of the program requires the concept of classes and constructors, which basically allow the user to create objects with set attributes and methods, as defined by the class, using constructors.
+
+My approach: I used classes and constructors to create the benders with stats and moves, as well as methods that for example allow the bender to attack the opposing bender. A thing of note is that since C++ does NOT seem to support elements of multiple types inside an array or vector, I have used two different arrays(one for move names and the other for attack power),linked by the indices.
+Conceptual Learning
+New Concepts I Discovered
+[Concept Name]: Classes and Constructors are useful because they allow the user to create objects with set properties which can be easily manipulated, or as and when needed, objects can be interchanged. Consider the battle between Mira and Kael; if this was to be done without classes i would have had to define each of their attributes and methods separately(in a different form) and keeping track of them would have become nightmarish.
+[Another Concept]: Passing by reference is also applicable for classes, otherwise HP will not change. Not a new concept as such but I gained a newfound appreciation for arrays as their fixed size makes them more suited in defining the movesets as each bender is limited to a maximum of four moves here.
+How I Applied These Concepts
+Classes and constructors are crucial to the program creating different benders and managing them becomes so convenient and repeatable since each bender object is now just an instance of the bender class. Simulating a battle becomes as simple as calling different attributes and accessing different stats of different benders.
+
+Real-World Connections
+This problem is the base-line for the battle element of all turn-based RPGs;for example, Pokemon videogames.

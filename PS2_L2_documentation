@@ -1,0 +1,21 @@
+Problem Understanding
+What the problem is asking: Now we have to build upon the basic program created in L1 by turning it into a proper battle simulator with duels lasting until one of the benders faints. Type advantages, turn order, critical hits and more features are added making the program more nuanced.
+
+Key concepts involved: Like last time, classes and constructors are used but what's new here is the implementation of type matchups using arrays and critical hits at random using the rand() function.
+
+My approach: 
+For type matchups, instead of defining each type matchup separately, I have simply created a list having types in such an order that the type to the right is stronger against the type that comes before and it finally loops back. To accomplish this easily, I have defined an "element_number" for each type which is nothing but the index of the type in list:
+0 -> Fire; 1 -> Water; 2 -> Earth; 3 -> Air
+I would like to add that my method woeks only because the type matchups are defined such that they form a closed loop(square) with no diagonals or anything. If that were the case, I would have had define a class of elements and proceed.
+For implementing the element of chance in the form of critical hits (and turn order when speeds are equal) I have used rand(), srand(), and time() in a standard manner.
+Battles can run both in auto mode and in manual mode; decided when the duel function is called.
+
+Conceptual Learning
+New Concepts I Discovered
+[Concept Name]: Getting random numbers in C++; it is very useful as a multitude of applications require random sequences of numbers for certain features.
+[Another Concept]: I learnt how commonly time() is used to generate random numbers as rand() truly is not random. Also the technique of using modulo(%) to get the random number and move input into range deserves a honorary mention.
+How I Applied These Concepts
+I applied these concepts in a standard manner where time() is used to make rand() work more like a true random number generator.
+
+Real-World Connections
+This problem is the base of all turned-based RPG battle like that in Pokemon. Besides that random numbers are used everywhere especially in gaming (called RNG). For example, in minecraft when you kill a mob the loot it drops depends on chance, implemented using random numbers. Another example could be matchmaking, where players of similar skillsets are matched at random. For a more practical example, we maybe can consider OTPs.

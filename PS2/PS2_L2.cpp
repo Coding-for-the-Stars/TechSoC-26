@@ -3,8 +3,7 @@
 #include <array>
 #include <ctime>
 
-int crit_count = 0;
-int hit_count = 0;
+
 std::array<std::string,4> elements = {"Fire","Water","Earth","Air"};
 class bender{
     public:
@@ -32,7 +31,7 @@ class bender{
 
     }    
     
-    void attack(bender& opponent, int i){
+    void attack(bender& opponent, int i,int& crit_count, int& hit_count){
        // base damage 
        int base_damage =  (Attack * movepower[i])/opponent.Defense;
        // type effectiveness
@@ -74,7 +73,8 @@ class bender{
     }
 };   
 int duel(bender& one, bender& two, std::string mode) {
-    
+    int crit_count = 0;
+    int hit_count = 0;
     std::cout <<"\n" << "=== DUEL BEGINS! ===" << "\n";
        one.display_stats();
     std::cout << "VS  ";
@@ -103,24 +103,24 @@ int duel(bender& one, bender& two, std::string mode) {
             std::cout << "Turn "<<count<<":  ";
             std::cout << one.name << " goes first!" << "   (Speed: "
             << one.Speed << " vs " << two.Speed << ")" << "\n";
-            one.attack(two,move_one%4);
+            one.attack(two,move_one%4,crit_count,hit_count);
             if(two.is_fainted()){std::cout << one.name << " wins the duel! " << "\n"; break;}
                         count += 1;
             std::cout << "Turn "<<count<<":  ";
             std::cout << two.name << " strikes back!" << "\n";
-            two.attack(one,move_two%4);
+            two.attack(one,move_two%4,crit_count,hit_count);
             if(one.is_fainted()){std::cout << two.name << " wins the duel! " << "\n";break;}}
         else if (one.Speed < two.Speed){
                         count += 1;
             std::cout << "Turn "<<count<<":  ";
             std::cout << two.name << " goes first!" << "   (Speed: "
             << two.Speed << " vs " << one.Speed << ")" << "\n";
-            two.attack(one,move_two%4);
+            two.attack(one,move_two%4,crit_count,hit_count);
             if(one.is_fainted()){std::cout << two.name << " wins the duel! " << "\n";break;}
                         count += 1;
             std::cout << "Turn "<<count<<":  ";
             std::cout << one.name << " strikes back!" << "\n";
-            one.attack(two,move_one%4);
+            one.attack(two,move_one%4,crit_count,hit_count);
             if(two.is_fainted()){std::cout << one.name << " wins the duel! " << "\n";break;}
         }
         else{
@@ -130,14 +130,14 @@ int duel(bender& one, bender& two, std::string mode) {
             std::cout << "Turn "<<count<<":  ";
             std::cout << two.name << " goes first!" << "   (Speed: "
             << one.Speed << " vs " << two.Speed << ")" << "\n";
-                two.attack(one,move_two%4);
+                two.attack(one,move_two%4,crit_count,hit_count);
                 if(one.is_fainted()) {
                     std::cout << two.name << " wins the duel! "<< "\n";
                      break;}
                             count += 1;
             std::cout << "Turn "<<count<<":  ";     
                 std::cout << one.name << " strikes back!" << "\n";     
-                one.attack(two,move_one%4);
+                one.attack(two,move_one%4,crit_count,hit_count);
                 if(two.is_fainted()){
                     std::cout << one.name << " wins the duel! " << "\n"; 
                     break;}
@@ -147,12 +147,12 @@ int duel(bender& one, bender& two, std::string mode) {
             std::cout << "Turn "<<count<<":  ";
             std::cout << one.name << " goes first!" << "   (Speed: "
             << one.Speed << " vs " << two.Speed << ")" << "\n";
-                one.attack(two,move_one%4);
+                one.attack(two,move_one%4,crit_count,hit_count);
                 if(two.is_fainted()){std::cout << one.name << " wins the duel! " << "\n"; break;}
                             count += 1;
             std::cout << "Turn "<<count<<":  ";
                 std::cout << two.name << " strikes back!" << "\n";
-                two.attack(one,move_two%4);
+                two.attack(one,move_two%4,crit_count,hit_count);
                 if(one.is_fainted()) {std::cout << two.name << " wins the duel! " << "\n"; break;}
             }
         }

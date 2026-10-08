@@ -1,0 +1,19 @@
+Problem Understanding
+What the problem is asking: Now the program is to be expanded by adding tournaments,AI for each of the three difficulties(easy, medium, hard),and status effects.
+
+Key concepts involved: Since the implementation of the tournament mode requires an array of modifiable length, vectors are used instead of fixed-length arrays.
+
+My approach: Very straightforward. 
+AI : four modes(0-manual,1-easy(random),2-medium(strongest),3-hard(heal,inflict status or damage as and when applicable)).
+Status effects: deal with mostly in the attack function of the bender.
+Tournament: vector of participants gets updated each round until there is only one member.
+
+Conceptual Learning
+New Concepts I Discovered
+[Concept Name]: Vectors as variable length arrays.
+[Another Concept]: Smart move selection that passes as "AI".
+How I Applied These Concepts
+Vectors are used to hold the varying number of participants in each round.
+
+Real-World Connections
+Such a program is a very basic version of a battle system such as found in most of the mainline Pokemon games.
